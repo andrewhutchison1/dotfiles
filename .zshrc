@@ -15,6 +15,9 @@ unsetopt autocd beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# ls uses colours by default
+alias ls='ls --color=auto'
+
 # Set the default text editor
 export EDITOR=nvim
 
