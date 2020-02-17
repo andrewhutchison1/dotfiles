@@ -9,6 +9,18 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# i3-gaps settings
+for_window [tiling] border pixel 0
+gaps inner 5
+gaps outer 0
+smart_gaps on
+smart_gaps inverse_outer
+
+# Floating window settings
+floating_minimum_size 800 x 600
+floating_maximum_size 1500 x 1000
+for_window [floating] move position 100 100
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -212,7 +224,7 @@ bar {
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $darkgray $purple $darkgray
+client.focused          $blue $blue $darkgray $purple $blue
 client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
 client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
