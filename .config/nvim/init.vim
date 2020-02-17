@@ -20,6 +20,9 @@ if dein#load_state('/home/andrew/.cache/dein')
   " Lightline
   call dein#add('itchyny/lightline.vim')
 
+  " vim-tmux-navigator
+  call dein#add('christoomey/vim-tmux-navigator')
+
   " Required:
   call dein#end()
   call dein#save_state()
