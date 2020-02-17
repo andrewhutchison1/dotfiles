@@ -1,0 +1,6 @@
+configuration {
+	show-icons: true;
+	modi: "run,drun";
+	dpi: 192;
+	theme: "gruvbox-dark-soft";
+}
