@@ -23,3 +23,7 @@ export EDITOR=nvim
 
 # dotfile configuration
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+# Prompt
+PROMPT='%F{yellow}%n@%m%f %F{blue}%~%f %(0?..%F{red}%B%?%b%f )%(1j.%F{green}%B[%j]%b%f.)
+%F{yellow}%B%#%b%f '
