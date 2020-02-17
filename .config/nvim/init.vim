@@ -17,6 +17,9 @@ if dein#load_state('/home/andrew/.cache/dein')
   " Gruvbox colour scheme
   call dein#add('morhetz/gruvbox')
 
+  " Lightline
+  call dein#add('itchyny/lightline.vim')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -32,6 +35,9 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
+
+" Lightline settings
+set noshowmode " to hide the "-- INSERT --" string
 
 " morhetz/gruvbox settings
 let g:gruvbox_contrast_dark='soft'
