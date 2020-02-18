@@ -6,8 +6,8 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-URxvt.font: xft:mono:medium:size=10
-URxvt.faceName: xft:mono:medium:size=10
+URxvt.font: xft:Fira Mono:medium:size=10
+URxvt.faceName: xft:Fira Mono:medium:size=10
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 
