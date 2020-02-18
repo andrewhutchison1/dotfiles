@@ -23,6 +23,13 @@ if dein#load_state('/home/andrew/.cache/dein')
   " vim-tmux-navigator
   call dein#add('christoomey/vim-tmux-navigator')
 
+  " fugitive (git wrapper)
+  call dein#add('tpope/vim-fugitive')
+
+  " fzf
+  call dein#add('junegunn/fzf')
+  call dein#add('junegunn/fzf.vim')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -39,11 +46,42 @@ endif
 
 "End dein Scripts-------------------------
 
-" Lightline settings
+" Remap leader key to ,
+let mapleader = ","
+
+" Relative line-numbering (with current line number on cursor line)
+set number relativenumber
+
+" Highlight current line
+set cursorline
+
+" 80 column highlight
+set textwidth=80
+set colorcolumn=+1
+
+"--------------------------------------
+" Navigation settings
+"--------------------------------------
+
+" Switch to previous buffer
+nnoremap <leader>bb :bp<CR>
+
+" FZF File search
+nnoremap <leader>f :Files<CR>
+
+"--------------------------------------
+" Plugin-specific settings
+"--------------------------------------
+
+" itchyny/lightline
 set noshowmode " to hide the "-- INSERT --" string
 
-" morhetz/gruvbox settings
+" morhetz/gruvbox
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_italic=1
 colorscheme gruvbox
 
+" tpope/vim-fugitive
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gc :Gcommit<CR>
