@@ -205,24 +205,13 @@ bar {
         statusline $yellow
         # workspaces section            
         #                    border  backgr. text
-        focused_workspace    $aqua $aqua $darkgray
+        focused_workspace    $yellow $yellow $darkgray
         inactive_workspace   $darkgray $darkgray $yellow
         active_workspace     $darkgray $darkgray $yellow
         urgent_workspace     $red $red $bg
     }
 }
-#end of bar section
 
-#start of window title bars & borders section
-
-# green gruvbox
-# class                 border|backgr|text|indicator|child_border
-#client.focused          $green $green $darkgray $purple $darkgray
-#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-#client.urgent           $red $red $white $red $red
-
-# blue gruvbox
 # class                 border|backgr|text|indicator|child_border
 client.focused          $blue $blue $darkgray $purple $blue
 client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
