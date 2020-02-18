@@ -1,0 +1,5 @@
+markup=pango
+
+[date]
+command=date +"%a %d-%M-%Y"
+interval=1
