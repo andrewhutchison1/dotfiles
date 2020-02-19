@@ -14,7 +14,6 @@ for_window [tiling] border pixel 0
 gaps inner 5
 gaps outer 0
 smart_gaps on
-smart_gaps inverse_outer
 
 # Floating window settings
 floating_minimum_size 800 x 600
@@ -196,7 +195,7 @@ set $white #ebdbb2
 
 #start of bar section
 bar {
-    position bottom
+    position top
     status_command i3blocks -c ~/.config/i3blocks/config
     colors {
         # bar background color
