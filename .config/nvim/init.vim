@@ -59,6 +59,14 @@ set cursorline
 set textwidth=80
 set colorcolumn=+1
 
+" Tabs
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" Set filetype for doxygen .dox files and enable comment continuations
+autocmd BufNewFile,BufRead *.dox setlocal filetype=doxygen
+autocmd BufNewFile,BufRead *.dox setlocal comments=s0:*\ -,mO:*\ \ ,ex0:*/,s1:/*,mb:*,ex:*/,://
+autocmd BufNewFile,BufRead *.dox setlocal formatoptions=croqt
+
 "--------------------------------------
 " Navigation settings
 "--------------------------------------
