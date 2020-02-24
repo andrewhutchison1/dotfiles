@@ -1,5 +1,31 @@
 markup=pango
 
+[brightness]
+format=json
+command=~/bin/i3blocks/brightness.py
+interval=15
+
+[volume]
+format=json
+command=~/bin/i3blocks/volume.py
+interval=15
+
+[network]
+format=json
+command=~/bin/i3blocks/network.py
+interval=15
+
+[battery]
+format=json
+command=~/bin/i3blocks/battery.py
+interval=15
+
 [date]
-command=date +"%a %d-%M-%Y"
+format=json
+command=~/bin/i3blocks/date.py
+interval=1
+
+[time]
+format=json
+command=~/bin/i3blocks/time.py
 interval=1
