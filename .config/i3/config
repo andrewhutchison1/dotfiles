@@ -197,6 +197,7 @@ set $white #ebdbb2
 bar {
     position top
     status_command i3blocks -c ~/.config/i3blocks/config
+    font pango:Fira Mono 10
     colors {
         # bar background color
         background $bg
