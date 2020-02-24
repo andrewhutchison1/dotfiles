@@ -30,6 +30,9 @@ if dein#load_state('/home/andrew/.cache/dein')
   call dein#add('junegunn/fzf')
   call dein#add('junegunn/fzf.vim')
 
+  " UltiSnips
+  call dein#add('SirVer/UltiSnips')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -72,10 +75,7 @@ autocmd BufNewFile,BufRead *.dox setlocal formatoptions=croqt
 "--------------------------------------
 
 " Switch to previous buffer
-nnoremap <leader>bb :bp<CR>
-
-" FZF File search
-nnoremap <leader>f :Files<CR>
+nnoremap <leader>bb <C-^>
 
 "--------------------------------------
 " Plugin-specific settings
@@ -93,3 +93,14 @@ colorscheme gruvbox
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gc :Gcommit<CR>
+
+" junegunn/fzf.vim
+nnoremap <leader>f :Files<CR>
+
+" SirVer/UltiSnips
+let g:UltiSnipsSnippetsDir="/home/andrew/.config/nvim/UltiSnips"
+let g:UltiSnipsSnippetDirectories=["/home/andrew/.config/nvim/UltiSnips"]
+let g:UltiSnipsEditSplit="horizontal"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+nnoremap <leader>ue :UltiSnipsEdit<CR>
