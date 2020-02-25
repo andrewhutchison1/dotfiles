@@ -14,9 +14,15 @@ BATTERY_SYMBOL = '🗲'
 def get_power_data():
     result = subprocess.run(['acpi', '-b'], capture_output=True)
     output = result.stdout.decode('utf-8').strip()
-    state, charge, time = output.split()[2:5]
+    split = output.split()
+    state = split[2].strip()[:-1]
+
+    if state == 'Full':
+        return PowerInfo(state, None, None, None, None)
+
+    charge, time = output.split()[3:5]
     h, m, s = time.split(':')
-    return PowerInfo(state[:-1], int(charge[:-2]), int(h), int(m), int(s))
+    return PowerInfo(state, int(charge[:-2]), int(h), int(m), int(s))
 
 def get_colour(charge):
     if charge <= 5:
@@ -30,14 +36,19 @@ def get_colour(charge):
 
 def main(argv):
     state, charge, h, m, _ = get_power_data()
-    colour = get_colour(charge)
-    h = f'{h} hr' if h else ''
-    m = f'{m} min' if m else ''
-    sp = ' ' if (h or not m) else ''
 
-    full_text = f' {BATTERY_SYMBOL}' + \
-            f' <span foreground="{colour}"><b>{charge}%</b> {state}' + \
-            f' ({h}{sp}{m})</span> '
+    if state == 'Full':
+        colour = GREEN
+        full_text = f' {BATTERY_SYMBOL} <span foreground="{colour}">' + \
+                '<b>100%</b></span> '
+    else:
+        colour = get_colour(charge)
+        h = f'{h} hr' if h else ''
+        m = f'{m} min' if m else ''
+        sp = ' ' if (h or not m) else ''
+        full_text = f' {BATTERY_SYMBOL}' + \
+                f' <span foreground="{colour}"><b>{charge}%</b> {state}' + \
+                f' ({h}{sp}{m})</span> '
 
     print(json.dumps({
         'full_text': full_text
