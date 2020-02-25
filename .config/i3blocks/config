@@ -1,14 +1,22 @@
 markup=pango
 
+[caps_num]
+format=json
+command=~/bin/i3blocks/caps_num.py
+interval=once
+signal=12
+
 [brightness]
 format=json
 command=~/bin/i3blocks/brightness.py
-interval=15
+interval=once
+signal=11
 
 [volume]
 format=json
 command=~/bin/i3blocks/volume.py
-interval=15
+interval=once
+signal=10
 
 [network]
 format=json
