@@ -6,6 +6,11 @@ command=~/bin/i3blocks/caps_num.py
 interval=once
 signal=12
 
+[cpu_temp]
+format=json
+command=~/bin/i3blocks/cpu_temp.py
+interval=15
+
 [brightness]
 format=json
 command=~/bin/i3blocks/brightness.py

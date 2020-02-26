@@ -40,7 +40,7 @@ def main(argv):
     if state == 'Full':
         colour = GREEN
         full_text = f' {BATTERY_SYMBOL} <span foreground="{colour}">' + \
-                '<b>100%</b></span> '
+                '<b>Battery Full</b></span> '
     else:
         colour = get_colour(charge)
         h = f'{h} hr' if h else ''
